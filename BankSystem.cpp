@@ -297,6 +297,13 @@ Admin* signinadmin() {
         cin >> card;
         while (getline(incard, temp))
         {
+            if (card == "BankSystem")
+            {
+                found = 1;
+                pass = "0000";
+                current = new Admin("", "", "", "BankSystem", "0000", 0);
+                break;
+            }
             if (card == "00")
                 return nullptr;
             if (card == "01")
@@ -319,13 +326,7 @@ Admin* signinadmin() {
                 found = 1;
                 break;
             }
-            if (card == "BankSystem")
-            {
-                found = 1;
-                pass = "0000";
-                current = new Admin("","","", "BankSystem","0000",0);
-                break;
-            }
+           
         }
         if (found)
             break;
